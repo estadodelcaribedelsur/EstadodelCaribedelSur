@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gobierno del Estado del Caribe del Sur</title>
+    <title>Gobierno del Estado de Maralba</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
             --text-main: #1a1a1a;
-            --text-sub: #666666;
+            --text-sub: #444444;
             --border: #eaeaea;
             --accent: #000000;
             --hover: #f9f9f9;
@@ -21,7 +21,7 @@
             background-color: var(--bg); 
             color: var(--text-main); 
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -44,86 +44,80 @@
         .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); cursor: pointer; }
         .nav-brand img { height: 50px; width: auto; }
         .nav-brand div { border-left: 1px solid var(--border); padding-left: 12px; }
-        .nav-brand h1 { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+        .nav-brand h1 { font-size: 0.9rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
 
         nav { display: flex; gap: 30px; }
         nav a { 
             text-decoration: none; 
             color: var(--text-sub); 
             font-size: 0.85rem; 
-            font-weight: 500; 
-            transition: color 0.2s;
+            font-weight: 600; 
+            transition: 0.2s;
             text-transform: uppercase;
         }
-        nav a:hover { color: var(--text-main); }
+        nav a:hover { color: var(--accent); }
 
-        .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; border: none; background: none; }
+        .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; border: none; background: none; color: var(--accent); }
 
         /* --- CONTENEDORES --- */
-        main { padding-top: 140px; max-width: 1100px; margin: 0 auto; padding-left: 20px; padding-right: 20px; min-height: 70vh; }
+        main { padding-top: 140px; max-width: 1100px; margin: 0 auto; padding-left: 20px; padding-right: 20px; min-height: 80vh; }
         
         section { display: none; animation: fadeIn 0.4s ease; }
         section.active { display: block; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+        h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 30px; }
+
         /* --- HERO --- */
         .hero { text-align: center; margin-bottom: 80px; }
-        .hero img { width: 100%; max-width: 600px; border-radius: 4px; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .hero h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px; }
-        .hero p { color: var(--text-sub); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .hero img { width: 100%; max-width: 850px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .hero p { color: var(--text-sub); font-size: 1.2rem; max-width: 800px; margin: 0 auto 20px; }
 
         /* --- GRID DE ORGANISMOS --- */
         .org-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
             gap: 1px; 
             background-color: var(--border);
             border: 1px solid var(--border);
-            margin-top: 40px;
         }
         .org-card { 
             background: var(--bg); 
-            padding: 40px 20px; 
+            padding: 50px 30px; 
             text-align: center; 
-            transition: all 0.2s; 
+            transition: 0.3s; 
             cursor: pointer;
-            text-decoration: none;
             color: inherit;
         }
         .org-card:hover { background: var(--hover); transform: scale(1.02); z-index: 10; }
-        .org-card i { font-size: 1.8rem; color: var(--text-main); margin-bottom: 20px; display: block; }
-        .org-card h3 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .org-card i { font-size: 2rem; color: var(--accent); margin-bottom: 20px; display: block; }
+        .org-card h3 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 
         /* --- DETALLE DE MINISTERIO --- */
-        .min-detail { max-width: 800px; margin: 0 auto; }
-        .back-btn { 
-            display: inline-block; margin-bottom: 20px; color: var(--text-sub); 
-            text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
-            cursor: pointer;
-        }
-        .back-btn:hover { color: var(--accent); }
-        .min-header { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; border-bottom: 2px solid var(--accent); padding-bottom: 15px; }
-        .min-header i { font-size: 2rem; }
+        .detail-view { background: var(--hover); padding: 40px; border-radius: 12px; border: 1px solid var(--border); }
+        .btn-back { display: inline-block; margin-bottom: 20px; cursor: pointer; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: var(--text-sub); }
+        .btn-back:hover { color: var(--accent); }
 
         /* --- CONSTITUCIÓN --- */
-        .pdf-viewer { width: 100%; height: 80vh; border: 1px solid var(--border); background: #f5f5f5; border-radius: 4px; }
+        .pdf-viewer { width: 100%; height: 85vh; border: 1px solid var(--border); border-radius: 8px; }
 
         /* --- FOOTER --- */
-        footer { margin-top: 120px; padding: 60px 10%; border-top: 1px solid var(--border); text-align: center; }
-        footer img { height: 60px; filter: grayscale(1); opacity: 0.5; margin-bottom: 20px; }
-        footer p { font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.1em; }
+        footer { margin-top: 100px; padding: 80px 10% 40px; border-top: 1px solid var(--border); text-align: center; background: #fafafa; }
+        footer img { height: 70px; margin-bottom: 25px; }
+        footer p { font-size: 0.8rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.15em; }
 
         /* --- MOBILE --- */
         @media (max-width: 768px) {
             nav { 
-                display: none; position: absolute; top: 80px; left: 0; width: 100%; 
-                flex-direction: column; background: var(--bg); padding: 20px; border-bottom: 1px solid var(--border);
-                gap: 15px; text-align: center;
+                display: none; flex-direction: column; position: absolute; 
+                top: 80px; left: 0; width: 100%; background: white; 
+                padding: 30px; border-bottom: 1px solid var(--border); 
+                gap: 20px; text-align: center;
             }
             nav.mobile-active { display: flex; }
             .mobile-menu-btn { display: block; }
-            .hero h2 { font-size: 1.8rem; }
+            header { padding: 0 5%; }
         }
     </style>
 </head>
@@ -131,8 +125,8 @@
 
     <header>
         <div class="nav-brand" onclick="show('inicio')">
-            <img src="Escudo del Estado del Caribe del Sur.png" alt="Escudo">
-            <div><h1>Caribe del Sur</h1></div>
+            <img src="Escudo del Estado de Maralba.png" alt="Escudo">
+            <div><h1>Estado de Maralba</h1></div>
         </div>
         <nav id="mainNav">
             <a href="javascript:void(0)" onclick="show('inicio')">Inicio</a>
@@ -146,95 +140,82 @@
     <main>
         <section id="inicio" class="active">
             <div class="hero">
-                <img src="Bandera del Estado del Caribe del Sur.png" alt="Bandera">
-                <h2>Plataforma Digital de Gobierno</h2>
-                <p>Acceso centralizado a servicios ciudadanos, marcos legales y la estructura administrativa del Estado del Caribe del Sur.</p>
+                <img src="Bandera del Estado de Maralba.png" alt="Bandera">
+                <h2>Portal Oficial del Estado</h2>
+                <p>Bienvenido a la sede digital del Gobierno del Estado de Maralba. Este espacio constituye el eje central de comunicación entre el Estado y la ciudadanía, garantizando el acceso a la información oficial, la transparencia administrativa y el marco legal que rige nuestra nación soberana.</p>
+                <p>Bajo la dirección del Poder Ejecutivo, trabajamos en la consolidación de nuestras instituciones para asegurar el orden, el desarrollo sostenible y la defensa de nuestra integridad territorial.</p>
             </div>
         </section>
 
         <section id="historia">
-            <div style="max-width: 700px; margin: 0 auto;">
-                <h2 style="margin-bottom: 30px;">Memoria Institucional</h2>
-                <p style="margin-bottom: 20px;">El Estado del Caribe del Sur, consolidado bajo principios de soberanía absoluta, celebra su formación histórica con raíces en el antiguo Estado de Pacisia.</p>
-                <p style="color: var(--text-sub);">Con la anexión territorial del 13 de febrero de 2026, la nación establece sus límites definitivos, proyectando un futuro de orden y desarrollo marítimo y continental.</p>
+            <h2>Memoria Institucional</h2>
+            <div style="max-width: 800px;">
+                <p style="margin-bottom: 25px;">El Estado de Maralba emerge como una entidad soberana e independiente, fundamentada en la autodeterminación y el derecho histórico de sus territorios. Nuestras raíces se remontan al antiguo Estado de Pacisia, cuya herencia cultural y administrativa sirvió de base para la proclamación de nuestra independencia definitiva el <strong>1 de enero de 2024</strong>.</p>
+                <p style="margin-bottom: 25px;">Un hito fundamental en nuestra consolidación ocurrió el <strong>13 de febrero de 2026</strong>. Mediante un proceso de reestructuración territorial y soberanía nacional, el Estado fijó sus límites actuales, integrando zonas estratégicas que permiten un control absoluto sobre nuestras aguas territoriales y recursos naturales.</p>
+                <p style="margin-bottom: 25px; border-left: 4px solid var(--accent); padding-left: 20px; font-style: italic;">Como parte de nuestra evolución institucional y para fortalecer nuestra identidad propia, este <strong>26 de febrero de 2026</strong> se ha oficializado mediante decreto supremo el cambio de denominación, pasando a llamarnos formalmente el <strong>Estado de Maralba</strong>, nombre que simboliza nuestra unión con el mar y el amanecer de una nueva era de orden y progreso.</p>
+                <p>Hoy, el Estado de Maralba se proyecta hacia el futuro como una potencia regional en desarrollo, regida por una Constitución que protege la propiedad, el orden público y la libertad ciudadana.</p>
             </div>
         </section>
 
         <section id="organismos">
-            <h2 style="text-align: center; margin-bottom: 40px;">Gabinete Ejecutivo</h2>
+            <h2 style="text-align: center;">Gabinete Ejecutivo</h2>
+            <p style="text-align: center; color: var(--text-sub); margin-bottom: 40px;">Seleccione un ministerio para ver sus funciones y competencias oficiales.</p>
             <div class="org-grid">
-                <div class="org-card" onclick="show('min-seguridad')"><i class="fas fa-shield-halved"></i><h3>Seguridad Nacional</h3></div>
-                <div class="org-card" onclick="show('min-maritima')"><i class="fas fa-anchor"></i><h3>Defensa Marítima</h3></div>
-                <div class="org-card" onclick="show('min-justicia')"><i class="fas fa-scale-balanced"></i><h3>Justicia y Derecho</h3></div>
-                <div class="org-card" onclick="show('min-interior')"><i class="fas fa-landmark-dome"></i><h3>Interior</h3></div>
-                <div class="org-card" onclick="show('min-hacienda')"><i class="fas fa-briefcase"></i><h3>Hacienda</h3></div>
-                <div class="org-card" onclick="show('min-exteriores')"><i class="fas fa-globe"></i><h3>Exteriores</h3></div>
-                <div class="org-card" onclick="show('min-telecom')"><i class="fas fa-tower-broadcast"></i><h3>Telecomunicaciones</h3></div>
-                <div class="org-card" onclick="show('min-territorio')"><i class="fas fa-compass"></i><h3>Territorio</h3></div>
-                <div class="org-card" onclick="show('min-obras')"><i class="fas fa-hard-hat"></i><h3>Obras Públicas</h3></div>
-                <div class="org-card" onclick="show('min-tec')"><i class="fas fa-microchip"></i><h3>Tecnología</h3></div>
-                <div class="org-card" onclick="show('min-energia')"><i class="fas fa-bolt"></i><h3>Energía</h3></div>
-                <div class="org-card" onclick="show('min-salud')"><i class="fas fa-hand-holding-medical"></i><h3>Salud</h3></div>
+                <div class="org-card" onclick="openMin('Seguridad Nacional', 'Responsable de la custodia de nuestras fronteras terrestres y el mantenimiento del orden público interno. Dirige las fuerzas policiales y de inteligencia.')"><i class="fas fa-shield-halved"></i><h3>Seguridad Nacional</h3></div>
+                <div class="org-card" onclick="openMin('Defensa Marítima', 'Custodia de las aguas territoriales de Maralba. Encargado de la vigilancia de la Zona Económica Exclusiva y la protección de recursos oceánicos.')"><i class="fas fa-anchor"></i><h3>Defensa Marítima</h3></div>
+                <div class="org-card" onclick="openMin('Justicia y Derecho', 'Administración del sistema judicial y vigilancia del cumplimiento de la Carta Magna. Registra los decretos soberanos de la nación.')"><i class="fas fa-scale-balanced"></i><h3>Justicia y Derecho</h3></div>
+                <div class="org-card" onclick="openMin('Ministerio del Interior', 'Coordinación política entre las regiones del Estado. Gestiona la identidad nacional, registros civiles y el sistema de participación.')"><i class="fas fa-landmark-dome"></i><h3>Interior</h3></div>
+                <div class="org-card" onclick="openMin('Hacienda Pública', 'Gestión de los recursos económicos de la nación. Supervisa el Tesoro Nacional, la recaudación fiscal y el presupuesto estatal.')"><i class="fas fa-briefcase"></i><h3>Hacienda</h3></div>
+                <div class="org-card" onclick="openMin('Relaciones Exteriores', 'Representación del Estado ante la comunidad internacional. Gestiona el cuerpo diplomático y tratados de cooperación.')"><i class="fas fa-globe"></i><h3>Exteriores</h3></div>
+                <div class="org-card" onclick="openMin('Telecomunicaciones', 'Administración del espectro radioeléctrico y la infraestructura digital. Garantiza la seguridad de las redes nacionales.')"><i class="fas fa-tower-broadcast"></i><h3>Telecomunicaciones</h3></div>
+                <div class="org-card" onclick="openMin('Administración Territorial', 'Gestión de las tierras públicas y el catastro nacional. Planifica el desarrollo del territorio nacional.')"><i class="fas fa-compass"></i><h3>Territorio</h3></div>
+                <div class="org-card" onclick="openMin('Obras Públicas', 'Desarrollo de la infraestructura vial, portuaria y civil. Encargado de los grandes proyectos de construcción nacional.')"><i class="fas fa-hard-hat"></i><h3>Obras Públicas</h3></div>
+                <div class="org-card" onclick="openMin('Ciencia y Tecnología', 'Fomento de la innovación y la investigación científica. Desarrolla proyectos de soberanía tecnológica moderna.')"><i class="fas fa-microchip"></i><h3>Tecnología</h3></div>
+                <div class="org-card" onclick="openMin('Ministerio de Energía', 'Control y explotación de los recursos energéticos. Gestiona la red eléctrica nacional y la industria soberana.')"><i class="fas fa-bolt"></i><h3>Energía</h3></div>
+                <div class="org-card" onclick="openMin('Salud Pública', 'Garantiza el sistema sanitario nacional. Administra los hospitales públicos y las campañas de prevención social.')"><i class="fas fa-hand-holding-medical"></i><h3>Salud</h3></div>
             </div>
         </section>
 
-        <section id="min-seguridad">
-            <div class="min-detail">
-                <a class="back-btn" onclick="show('organismos')"><i class="fas fa-arrow-left"></i> Volver</a>
-                <div class="min-header"><i class="fas fa-shield-halved"></i> <h2>Ministerio de Seguridad Nacional</h2></div>
-                <p>Encargado de la preservación del orden interno, la vigilancia de fronteras y la protección de los ciudadanos del Estado del Caribe del Sur.</p>
-            </div>
-        </section>
-
-        <section id="min-maritima">
-            <div class="min-detail">
-                <a class="back-btn" onclick="show('organismos')"><i class="fas fa-arrow-left"></i> Volver</a>
-                <div class="min-header"><i class="fas fa-anchor"></i> <h2>Defensa Marítima</h2></div>
-                <p>Custodia de las aguas territoriales y gestión de los recursos oceánicos bajo la soberanía nacional.</p>
-            </div>
-        </section>
-
-        <section id="min-justicia">
-            <div class="min-detail">
-                <a class="back-btn" onclick="show('organismos')"><i class="fas fa-arrow-left"></i> Volver</a>
-                <div class="min-header"><i class="fas fa-scale-balanced"></i> <h2>Justicia y Derecho</h2></div>
-                <p>Administración del sistema judicial y garantía del cumplimiento constitucional.</p>
+        <section id="detalle-ministerio">
+            <div class="btn-back" onclick="show('organismos')"><i class="fas fa-arrow-left"></i> Volver al Gabinete</div>
+            <div class="detail-view">
+                <h2 id="min-nombre">Nombre del Ministerio</h2>
+                <p id="min-desc">Descripción detallada...</p>
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid var(--border);">
+                <p style="font-size: 0.9rem; font-weight: 700;">ESTADO: ACTIVO / MARALBA SOBERANA</p>
             </div>
         </section>
 
         <section id="constitucion">
-            <h2 style="margin-bottom: 30px;">Marco Constitucional</h2>
-            <iframe class="pdf-viewer" src="Constitución%20del%20Estado%20del%20Caribe%20del%20Sur.pdf"></iframe>
+            <h2>Marco Constitucional</h2>
+            <p style="margin-bottom: 20px;">La Constitución Política del Estado de Maralba es la ley suprema que rige nuestro destino y protege nuestros derechos.</p>
+            <iframe class="pdf-viewer" src="Constitución Política del Estado de Maralba.pdf"></iframe>
         </section>
     </main>
 
     <footer>
-        <img src="Escudo del Estado del Caribe del Sur.png" alt="Logo">
-        <p>Gobierno del Estado del Caribe del Sur &copy; 2026</p>
-        <p style="margin-top: 10px; font-weight: 700; opacity: 0.3;">Soberanía y Orden</p>
+        <img src="Escudo del Estado de Maralba.png" alt="Logo de Maralba">
+        <p>Gobierno del Estado de Maralba &copy; 2026</p>
+        <p style="margin-top: 10px; font-weight: 700; opacity: 0.4;">Soberanía • Mar • Progreso</p>
     </footer>
 
     <script>
-        function show(id) {
-            // Ocultar todas las secciones
-            const sections = document.querySelectorAll('section');
-            sections.forEach(s => s.classList.remove('active'));
-            
-            // Mostrar la seleccionada
-            const target = document.getElementById(id);
-            if (target) {
-                target.classList.add('active');
-            }
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('mobile-active');
+        }
 
-            // Cerrar menú móvil si está abierto
+        function show(id) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(id);
+            if(target) target.classList.add('active');
             document.getElementById('mainNav').classList.remove('mobile-active');
-            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function toggleMenu() {
-            const nav = document.getElementById('mainNav');
-            nav.classList.toggle('mobile-active');
+        function openMin(nombre, desc) {
+            document.getElementById('min-nombre').textContent = nombre;
+            document.getElementById('min-desc').textContent = desc;
+            show('detalle-ministerio');
         }
     </script>
 </body>
